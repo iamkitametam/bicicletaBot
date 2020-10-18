@@ -1,5 +1,9 @@
 import telebot
-import credentials
+
+try:
+    import credentials
+except ImportError:
+    raise ImportError('ImportError import credentials')
 
 bot = telebot.TeleBot(credentials.TOKEN)
 
