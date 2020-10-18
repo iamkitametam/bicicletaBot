@@ -1,11 +1,9 @@
 import telebot
+import os
+TOKEN = os.environ["TOKEN"]
 
-try:
-    import credentials
-except ImportError:
-    raise ImportError('ImportError import credentials')
 
-bot = telebot.TeleBot(credentials.TOKEN)
+bot = telebot.TeleBot(TOKEN)
 
 
 @bot.message_handler(commands=['start', 'help'])
